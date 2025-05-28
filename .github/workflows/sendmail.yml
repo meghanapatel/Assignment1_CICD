@@ -20,9 +20,27 @@ jobs:
           username: ${{ secrets.GMAIL_USER }}
           password: ${{ secrets.GMAIL_PASS }}
           subject: GitHub Actions Email Test
+          content_type: text/html
           body: |
-            This is a test email sent from GitHub Actions.
+                 body: |
+                    <html>
+                        <body style="font-family: Arial, sans-serif; line-height: 1.6;">
+                        <p>Hello Team,</p>
 
-            ✅ The workflow ran successfully!
+                        <p>The <strong>CI/CD workflow</strong> for the <strong>Marketplace Node.js application</strong> has successfully executed.</p>
+
+                        <h3>🚀 Key Highlights:</h3>
+                        <ul>
+                            <li>Implemented a full GitHub Actions workflow for continuous integration and deployment.</li>
+                            <li>Utilized various types of variables across workflows, jobs, and steps to manage configurations.</li>
+                            <li>Integrated actions from the GitHub Marketplace to streamline setup and deployment processes.</li>
+                            <li>Applied secure secret handling using GitHub Secrets to manage sensitive data.</li>
+                        </ul>
+
+                        <p>Best regards,<br>
+                        DevOps Bot</p>
+                        </body>
+                    </html>
+
           to: ${{ secrets.GMAIL_USER }}
           from: GitHub Actions <${{ secrets.GMAIL_USER }}>
