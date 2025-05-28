@@ -1,0 +1,28 @@
+name: Send Mail on Push
+
+on:
+  push:
+    branches: [main]  # Triggers the workflow when pushing to main
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send email using Gmail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.GMAIL_USER }}
+          password: ${{ secrets.GMAIL_PASS }}
+          subject: GitHub Actions Email Test
+          body: |
+            This is a test email sent from GitHub Actions.
+
+            ✅ The workflow ran successfully!
+          to: ${{ secrets.GMAIL_USER }}
+          from: GitHub Actions <${{ secrets.GMAIL_USER }}>
