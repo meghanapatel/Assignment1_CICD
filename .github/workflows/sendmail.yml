@@ -18,7 +18,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.GMAIL_USER }}
           password: ${{ secrets.GMAIL_PASS }}
-          subject: GitHub Actions Email Test
+          subject: GitHub Actions Email Test For Assignment
           content_type: text/plain
           body: |
                      Hello Team,
@@ -36,7 +36,7 @@ jobs:
                         https://github.com/roxter207/ica-activity
 
                         Regards,  
-                        Group Member
+                        Group Members
 
           to: ${{ secrets.GMAIL_USER }}
           from: GitHub Actions <${{ secrets.GMAIL_USER }}>
