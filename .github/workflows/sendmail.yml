@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: dawidd6/action-send-mail@v3
-
       - name: Send email using Gmail
         uses: dawidd6/action-send-mail@v3
         with:
