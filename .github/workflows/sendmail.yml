@@ -7,6 +7,8 @@ on:
 jobs:
   send_email:
     runs-on: ubuntu-latest
+    env: 
+        APP_NAME: Marketplace Email Integration (Node.js App)
 
     steps:
       - name: Send email using Gmail
@@ -21,7 +23,7 @@ jobs:
           body: |
                      Hello Team,
 
-                        The CI/CD workflow for the Marketplace Node.js application has successfully executed.
+                        The CI/CD workflow for the ${{env.APP_NAME}} application has successfully executed.
 
                         Key Learining:
                         - Implemented a full GitHub Actions workflow for continuous integration and deployment.
