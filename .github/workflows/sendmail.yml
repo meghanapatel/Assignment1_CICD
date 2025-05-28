@@ -19,7 +19,6 @@ jobs:
           subject: GitHub Actions Email Test
           content_type: text/plain
           body: |
-                 body: |
                      Hello Team,
 
                         The CI/CD workflow for the Marketplace Node.js application has successfully executed.
